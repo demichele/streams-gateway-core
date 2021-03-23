@@ -35,7 +35,7 @@ impl Channel {
     /// Initialize the Channel
     ///
 
-    pub async fn new(node: String, mwm: u8, local_pow: bool, seed_option: Option<String>) -> Channel {
+    pub fn new(node: String, mwm: u8, local_pow: bool, seed_option: Option<String>) -> Channel {
         let seed = match seed_option {
             Some(seed) => seed,
             None => random_seed(),
@@ -63,7 +63,7 @@ impl Channel {
     /// Open a channel
     ///
 
-    pub async fn open(&mut self) -> Result<(String, String)> {
+    pub fn open(&mut self) -> Result<(String, String)> {
         let announcement_message = self.author.send_announce()?;
 
         self.announcement_id = announcement_message.msgid.to_string();
