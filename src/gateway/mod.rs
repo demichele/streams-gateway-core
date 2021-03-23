@@ -1,1 +1,1 @@
-pub async mod publisher;
+pub mod publisher;
