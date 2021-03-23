@@ -61,8 +61,8 @@ impl Channel {
     ///
     /// Open a channel
     ///
-    #[tokio::main]
-    pub fn open(&mut self) -> Result<(String, String)> {
+    #[pub::main]
+    async fn open(&mut self) -> Result<(String, String)> {
         let announcement_message = self.author.send_announce()?;
 
         self.announcement_id = announcement_message.msgid.to_string();
