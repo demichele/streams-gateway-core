@@ -34,7 +34,8 @@ impl Channel {
     ///
     /// Initialize the Channel
     ///
-    pub fn new(node: String, mwm: u8, local_pow: bool, seed_option: Option<String>) -> Channel {
+    #[tokio::main]
+    pub async fn new(node: String, mwm: u8, local_pow: bool, seed_option: Option<String>) -> Channel {
         let seed = match seed_option {
             Some(seed) => seed,
             None => random_seed(),
