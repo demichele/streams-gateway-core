@@ -34,7 +34,7 @@ impl Channel {
     ///
     /// Initialize the Channel
     ///
-    #[tokio::main]
+
     pub async fn new(node: String, mwm: u8, local_pow: bool, seed_option: Option<String>) -> Channel {
         let seed = match seed_option {
             Some(seed) => seed,
@@ -62,7 +62,7 @@ impl Channel {
     ///
     /// Open a channel
     ///
-    #[tokio::main]
+
     pub async fn open(&mut self) -> Result<(String, String)> {
         let announcement_message = self.author.send_announce()?;
 
