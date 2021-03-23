@@ -61,7 +61,7 @@ impl Channel {
     ///
     /// Open a channel
     ///
-    #[pub::main]
+    #[tokio::open]
     async fn open(&mut self) -> Result<(String, String)> {
         let announcement_message = self.author.send_announce()?;
 
